@@ -56,6 +56,8 @@ if (isDualMono) {
 Array.prototype.push.apply(args, ['-c:a', 'aac']);
 // 字幕ストリーム設定
 Array.prototype.push.apply(args, ['-map', '0:s?', '-c:s', 'mov_text']);
+// エンコードエラー防止
+Array.prototype.push.apply(args, ['-map', '-0:10?', '-map', '-0:11?', '-map', '-0:13?']);
 // 品質設定
 Array.prototype.push.apply(args, ['-preset', 'veryfast', '-crf', '26']);
 // 出力ファイル
